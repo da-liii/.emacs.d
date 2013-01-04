@@ -2,6 +2,7 @@
 ;; Default Settings
 (prefer-coding-system 'utf-8)
 (display-time)
+(global-linum-mode)
 ;;(setq explicit-shell-file-name "/bin/bash")
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -10,11 +11,12 @@
  ;; If there is more than one, they won't work right.
  '(c-tab-always-indent nil)
  '(display-time-mode t)
-;; '(initial-buffer-choice "~/Documents")
+ ;; '(initial-buffer-choice "~/Documents")
  '(org-agenda-files (quote ("~/todo.org")))
  '(org-agenda-include-diary t)
  '(org-support-shift-select t)
- '(linum-mode t))
+ '(tool-bar-mode nil)
+ )
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -83,7 +85,7 @@
 ;; 设置左边按钮外观：外框框边大小和颜色  
 (set-face-attribute 'tabbar-button nil  
 		    :inherit 'tabbar-default  
-		    :box '(:line-width 1 :color "yellow70")  
+		    :box '(:line-width 1 :color "yellow")  
 		    )  
 ;; 设置当前tab外观：颜色，字体，外框大小和颜色  
 (set-face-attribute 'tabbar-selected nil  
@@ -117,38 +119,34 @@
 (eval-after-load "color-theme"
   '(progn
      (color-theme-initialize)))
+(color-theme-calm-forest)
+
+(load "~/.emacs.d/eo-mode.el")
 
 ;; Mode
 (setq default-major-mode 'visual-line-mode)
 ;; (setq default-major-mode 'text-mode)
 ;; (add-hook 'text-mode-hook 'turn-on-auto-fill)
 (setq auto-mode-alist (cons '("\\.eo$" . eo-mode) auto-mode-alist))
-(setq auto-mode-alist (cons '("\\.zh$" . zh-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\.lua$" . lua-mode) auto-mode-alist))
 (setq auto-mode-alist (append '(("/*.\.php[345]?$" . php-mode)) auto-mode-alist))
 (autoload 'php-mode "php-mode.el" "Php mode." t)
 (autoload 'lua-mode "lua-mode" "Lua editing mode." t)
 (visual-line-mode)
 ;; org-mode
-(load "~/.emacs.d/my.el")
-(load "~/.emacs.d/eo-mode.el")
-(load "~/.emacs.d/zh-mode.el")
 
 ;; R Emacs Speaks Statistics
-(load "~/.emacs.d/lisps/ess-12.09/lisp/ess-site")
+;; (load "~/.emacs.d/lisps/ess-12.09/lisp/ess-site")
 
 ;; markdown-mode
 (autoload 'markdown-mode "markdown-mode.el"
-   "Major mode for editing Markdown files" t)
+  "Major mode for editing Markdown files" t)
 (setq auto-mode-alist
-   (cons '("\.md" . markdown-mode) auto-mode-alist))
+      (cons '("\.md" . markdown-mode) auto-mode-alist))
 
 ;; Code Browser
 (add-to-list 'load-path "/usr/share/emacs/site-lisp/ecb")
 (require 'ecb)
-;; 新浪微博
-(add-to-list 'load-path "~/.emacs.d/weibo.emacs")
-(require 'weibo)
 
 ;; 自动补齐
 (setq hippie-expand-try-functions-list 
@@ -165,8 +163,8 @@
 	try-complete-lisp-symbol))
 
 ;; python
-(require 'pymacs)
-(pymacs-load "ropemacs" "rope-")
+;;(require 'pymacs)
+;;(pymacs-load "ropemacs" "rope-")
 
 
 ;; 备份
@@ -181,13 +179,13 @@
 (add-hook 'before-save-hook  'force-backup-of-buffer)
 
 (setq
-   backup-by-copying t      ; don't clobber symlinks
-   backup-directory-alist
-    '(("." . "~/.emacs.d/autosaves"))    ; don't litter my fs tree
-   delete-old-versions t
-   kept-new-versions 6
-   kept-old-versions 2
-   version-control t)       ; use versioned backups
+ backup-by-copying t      ; don't clobber symlinks
+ backup-directory-alist
+ '(("." . "~/.emacs.d/autosaves"))    ; don't litter my fs tree
+ delete-old-versions t
+ kept-new-versions 6
+ kept-old-versions 2
+ version-control t)       ; use versioned backups
 
 ;; 键绑定
 (load "~/.emacs.d/keymap.el")
@@ -245,10 +243,8 @@ If set/leave chinese-font-size to nil, it will follow english-font-size"
   (global-set-key (kbd "<C-mouse-5>") 'text-scale-decrease)
 
   (require `highlight-tail)
-  (setq highlight-tail-colors
-          '(("#c1e156" . 0)
-          ("#b8ff07" . 25)
-          ("#00c377" . 60)))
+  (setq highlight-tail-colors '(("black" . 0)
+				("#2525bc" . 25)
+				("black" . 66)))
   (highlight-tail-mode)
   )
-
