@@ -31,12 +31,12 @@
 	     (c-toggle-auto-hungry-state)))
 
 (require 'cedet)
-(semantic-load-enable-minimum-features)
-(semantic-load-enable-code-helpers)
-(semantic-load-enable-gaudy-code-helpers)
-(global-semantic-stickyfunc-mode nil)
+;;(semantic-load-enable-minimum-features)
+;;(semantic-load-enable-code-helpers)
+;;(semantic-load-enable-gaudy-code-helpers)
+;;(global-semantic-stickyfunc-mode nil)
 ;;(semantic-load-enable-excessive-code-helpers)
-(semantic-load-enable-semantic-debugging-helpers)
+;;(semantic-load-enable-semantic-debugging-helpers)
 (global-set-key [f12] 'semantic-ia-fast-jump)
 (global-set-key [S-f12]
                 (lambda ()
@@ -52,11 +52,6 @@
                     (semantic-mrub-switch-tags first))))
 
 (require 'semantic-tag-folding nil 'noerror)
-(global-semantic-tag-folding-mode 1)
-(define-key semantic-tag-folding-mode-map (kbd "C-c , -") 'semantic-tag-folding-fold-block)
-(define-key semantic-tag-folding-mode-map (kbd "C-c , +") 'semantic-tag-folding-show-block)
-(define-key semantic-tag-folding-mode-map (kbd "C-_") 'semantic-tag-folding-fold-all)
-(define-key semantic-tag-folding-mode-map (kbd "C-+") 'semantic-tag-folding-show-all)
-(global-set-key (kbd "C-?") 'global-semantic-tag-folding-mode) ;;gdb调试的时候用来禁用折叠mode
+
 
 (provide 'init-cpp)
