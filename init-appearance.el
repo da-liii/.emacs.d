@@ -1,6 +1,7 @@
 (display-time)
 (global-linum-mode)
 (which-function-mode)
+(scroll-bar-mode -1)
 
 (require 'tabbar)  
 (tabbar-mode 1) 
@@ -88,7 +89,7 @@ If set/leave chinese-font-size to nil, it will follow english-font-size"
 			  zh-font))))
 
   (qiang-set-font
-   '("Source Code Pro" "Consolas" "Monaco" "DejaVu Sans Mono" "Monospace" "Courier New") ":pixelsize=18"
+   '("Source Code Pro" "Consolas" "Monaco" "DejaVu Sans Mono" "Monospace" "Courier New") ":pixelsize=14"
    '("Microsoft Yahei" "WenQuanYi Zen Hei" "黑体" "新宋体" "宋体"))
 
   (global-set-key (kbd "<C-mouse-4>") 'text-scale-increase)

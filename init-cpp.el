@@ -1,19 +1,19 @@
 ;;自动插入匹配的括号
 ;;C/C++  mode
-(defun my-c-mode-auto-pair ()
-  (interactive)
-  (make-local-variable 'skeleton-pair-alist)
-  (setq skeleton-pair-alist  '(
-    (?{ \n > _ \n ?} >)))
-  (setq skeleton-pair t)
-  (local-set-key (kbd "(") 'skeleton-pair-insert-maybe)
-  (local-set-key (kbd "[") 'skeleton-pair-insert-maybe)
-  (local-set-key (kbd "\"") 'skeleton-pair-insert-maybe)
-  (local-set-key (kbd "{") 'skeleton-pair-insert-maybe)   
-  (backward-char))
+;; (defun my-c-mode-auto-pair ()
+;;   (interactive)
+;;   (make-local-variable 'skeleton-pair-alist)
+;;   (setq skeleton-pair-alist  '(
+;;     (?{ \n > _ \n ?} >)))
+;;   (setq skeleton-pair t)
+;;   (local-set-key (kbd "(") 'skeleton-pair-insert-maybe)
+;;   (local-set-key (kbd "[") 'skeleton-pair-insert-maybe)
+;;   (local-set-key (kbd "\"") 'skeleton-pair-insert-maybe)
+;;   (local-set-key (kbd "{") 'skeleton-pair-insert-maybe)   
+;;   (backward-char))
 
-(add-hook 'c-mode-hook 'my-c-mode-auto-pair)
-(add-hook 'c++-mode-hook 'my-c-mode-auto-pair)
+;; (add-hook 'c-mode-hook 'my-c-mode-auto-pair)
+;; (add-hook 'c++-mode-hook 'my-c-mode-auto-pair)
 
 (add-hook 'c-mode-hook
 	  '(lambda ()
