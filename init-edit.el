@@ -4,6 +4,10 @@
 (global-set-key [(shift f3)] 'highlight-symbol-prev)
 (global-set-key [(meta f3)] 'highlight-symbol-prev)
 
+;; auto pair
+(require 'autopair)
+(autopair-global-mode)
+
 ;; 自动补齐
 (setq hippie-expand-try-functions-list 
       '(try-expand-dabbrev
