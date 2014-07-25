@@ -17,6 +17,7 @@
 
 (add-hook 'c-mode-hook
 	  '(lambda ()
+             (gtags-mode)
 	     (c-set-style "K&R")
 	     (c-toggle-auto-state)
 	     (c-toggle-auto-hungry-state)
@@ -25,6 +26,7 @@
 
 (add-hook 'c++-mode-hook
           '(lambda ()
+             (gtags-mode)
              (c-set-style "stroustrup")
 	     (c-toggle-auto-state)
 	     (setq tab-width 4)

@@ -70,6 +70,10 @@
 
 (helm-mode 1)
 
+;; gtags
+(global-set-key (kbd "M-,") 'gtags-find-tag-from-here)
+
+
 ;; 备份
 (setq version-control t ;; Use version numbers for backups
       kept-new-versions 16 ;; Number of newest versions to keep

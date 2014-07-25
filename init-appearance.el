@@ -3,6 +3,8 @@
 (which-function-mode)
 (scroll-bar-mode -1)
 
+(require 'rainbow-delimiters)
+(global-rainbow-delimiters-mode)
 (require 'tabbar)  
 (tabbar-mode 1) 
 (global-set-key [(meta j)] 'tabbar-forward)  

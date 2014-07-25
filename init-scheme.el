@@ -1,6 +1,3 @@
-(require 'highlight-parentheses)
-(add-hook 'scheme-mode-hook 'highlight-parentheses-mode)
-
 (require 'paredit)
 (add-hook 'scheme-mode-hook 'paredit-mode)
 
