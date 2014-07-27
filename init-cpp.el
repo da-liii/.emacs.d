@@ -1,28 +1,9 @@
 ;;C/C++  mode
-(add-hook 'c-mode-hook
-	  '(lambda ()
-             (gtags-mode 1)
-	     (c-set-style "K&R")
-	     (c-toggle-auto-state)
-	     (c-toggle-auto-hungry-state)
-	     (setq tab-width 4)
-	     (setq c-basic-offset 4)))
-
-(add-hook 'c++-mode-hook
-          '(lambda ()
-             (gtags-mode 1)
-             (c-set-style "stroustrup")
-	     (c-toggle-auto-state)
-	     (setq tab-width 4)
-	     (c-toggle-auto-hungry-state)))
-
 (require 'cedet)
-;;(semantic-load-enable-minimum-features)
-;;(semantic-load-enable-code-helpers)
-;;(semantic-load-enable-gaudy-code-helpers)
-;;(global-semantic-stickyfunc-mode nil)
-;;(semantic-load-enable-excessive-code-helpers)
-;;(semantic-load-enable-semantic-debugging-helpers)
+(global-semantic-idle-completions-mode t)
+(global-semantic-decoration-mode t)
+(global-semantic-highlight-func-mode t)
+(global-semantic-show-unmatched-syntax-mode t)
 (global-set-key [f12] 'semantic-ia-fast-jump)
 (global-set-key [S-f12]
                 (lambda ()
@@ -36,7 +17,25 @@
                                                    (semantic-current-tag))
                         (setq first (cdr (car (cdr alist)))))
                     (semantic-mrub-switch-tags first))))
+(add-hook 'c-mode-hook
+	  '(lambda ()
+             (gtags-mode 1)
+	     (c-set-style "K&R")
+	     (c-toggle-auto-state)
+	     (c-toggle-auto-hungry-state)
+             (setq ac-sources (append '(ac-source-semantic) ac-sources))
+             (semantic-mode t)
+	     (setq tab-width 4)
+	     (setq c-basic-offset 4)))
 
-(require 'semantic-tag-folding nil 'noerror)
+(add-hook 'c++-mode-hook
+          '(lambda ()
+             (gtags-mode 1)
+             (setq ac-sources (append '(ac-source-semantic) ac-sources))
+             (semantic-mode t)
+             (c-set-style "stroustrup")
+	     (c-toggle-auto-state)
+	     (setq tab-width 4)
+	     (c-toggle-auto-hungry-state)))
 
 (provide 'init-cpp)
