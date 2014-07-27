@@ -1,10 +1,7 @@
-(display-time)
-(global-linum-mode)
-(which-function-mode)
-(scroll-bar-mode -1)
+;; 隐藏菜单栏
+(menu-bar-mode -1)
 
-(require 'rainbow-delimiters)
-(global-rainbow-delimiters-mode)
+;; Tabber
 (require 'tabbar)  
 (tabbar-mode 1) 
 (global-set-key [(meta j)] 'tabbar-forward)  
@@ -38,6 +35,12 @@
 		    :box '(:line-width 2 :color "#00B2BF")  
 		    )  
 
+;; Buffer
+(global-linum-mode)
+(scroll-bar-mode -1)
+
+(require 'rainbow-delimiters)
+(global-rainbow-delimiters-mode)
 
 (require 'color-theme)
 (eval-after-load "color-theme"
@@ -103,5 +106,9 @@ If set/leave chinese-font-size to nil, it will follow english-font-size"
 				("black" . 66)))
   (highlight-tail-mode)
   )
+
+;; mode-line
+(which-function-mode)
+(display-time)
 
 (provide 'init-appearance)

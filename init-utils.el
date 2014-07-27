@@ -1,6 +1,5 @@
 ;;(require 'sdcv-mode)
 ;;(global-set-key (kbd "C-c d") 'sdcv-search)
-
 ;; helm
 (add-to-list 'load-path "~/.emacs.d/lisps/helm")
 (require 'helm)
@@ -67,12 +66,8 @@
 
   ;;; Save current position to mark ring
 (add-hook 'helm-goto-line-before-hook 'helm-save-current-pos-to-mark-ring)
-
+(set-face-attribute 'helm-selection nil :background "#666666")
 (helm-mode 1)
-
-;; gtags
-(global-set-key (kbd "M-,") 'gtags-find-tag-from-here)
-
 
 ;; 备份
 (setq version-control t ;; Use version numbers for backups
@@ -95,13 +90,7 @@
  version-control t)       ; use versioned backups
 
 ;; Code Browser
-(add-to-list 'load-path "/usr/share/emacs/site-lisp/ecb")
-(setq stack-trace-on-error nil)
-(require 'ecb)
-
-(global-set-key [M-left] 'windmove-left)
-(global-set-key [M-right] 'windmove-right)
-(global-set-key [M-up] 'windmove-up)
-(global-set-key [M-down] 'windmove-down) 
-
+;;(add-to-list 'load-path "/usr/share/emacs/site-lisp/ecb")
+;;(setq stack-trace-on-error nil)
+;;(require 'ecb)
 (provide 'init-utils)

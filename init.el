@@ -21,10 +21,6 @@
  '(tool-bar-mode nil))
 
 	
-(add-to-list 'load-path "~/.emacs.d/")                                                                                                                                    
-(require 'auto-complete-config)                                                                                                                                           
-(add-to-list 'ac-dictionary-directories "~/.emacs.d//ac-dict")                                                                                                            
-(ac-config-default)
 
 ;; inits
 (require 'init-markdown)
