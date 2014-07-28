@@ -23,15 +23,17 @@
 	
 
 ;; inits
+(require 'init-appearance)
+(require 'init-edit)
 (require 'init-markdown)
 (require 'init-cpp) ;; c & cpp
-(require 'init-appearance)
 (require 'init-scheme)
 (require 'init-utils)
-(require 'init-edit)
 (require 'init-keymap)
 (require 'init-shell)
 (require 'init-org)
+;(require 'init-python)
+(require 'init-java)
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
