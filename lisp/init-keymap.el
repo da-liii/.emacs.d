@@ -1,5 +1,7 @@
 ;; Key Map
-(define-key global-map "\C-x\C-u" 'undo)
+(global-set-key [(ctrl =)] 'replace-string)
+(global-set-key (kbd "C-;") 'comment-or-uncomment-region)
+(global-set-key (kbd "M-[") 'undo)
 (define-key global-map "\C-h" 'backward-delete-char-untabify)
 (global-set-key (kbd "<f5>") 'compile)
 (global-set-key [(meta ?/)] 'hippie-expand)

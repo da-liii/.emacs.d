@@ -1,7 +1,7 @@
-;;(require 'sdcv-mode)
-;;(global-set-key (kbd "C-c d") 'sdcv-search)
+(require 'sdcv-mode)
+(global-set-key (kbd "C-c d") 'sdcv-search)
 ;; helm
-(add-to-list 'load-path "~/.emacs.d/lisps/helm")
+(add-to-list 'load-path "~/.emacs.d/lisp/helm")
 (require 'helm)
 (require 'helm-config)
 (require 'helm-eshell)

@@ -42,12 +42,6 @@
 (require 'rainbow-delimiters)
 (global-rainbow-delimiters-mode)
 
-(require 'color-theme)
-(eval-after-load "color-theme"
-  '(progn
-     (color-theme-initialize)))
-(color-theme-calm-forest)
-
 ;; font
 (when (display-graphic-p)
   (defun qiang-font-existsp (font)
@@ -110,5 +104,13 @@ If set/leave chinese-font-size to nil, it will follow english-font-size"
 ;; mode-line
 (which-function-mode)
 (display-time)
+
+(require 'color-theme)
+(eval-after-load "color-theme"
+  '(progn
+     (color-theme-initialize)))
+(color-theme-calm-forest)
+
+
 
 (provide 'init-appearance)
