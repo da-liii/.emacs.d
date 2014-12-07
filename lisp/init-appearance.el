@@ -2,45 +2,57 @@
 (menu-bar-mode -1)
 
 ;; Tabber
-(require 'tabbar)  
-(tabbar-mode 1) 
-(global-set-key [(meta j)] 'tabbar-forward)  
-(global-set-key [(meta k)] 'tabbar-backward) 
-;; 设置tabbar外观  
-;; 设置默认主题: 字体, 背景和前景颜色，大小  
-(set-face-attribute 'tabbar-default nil  
-		    :family "DejaVu Sans Mono"  
-		    :background "gray80"  
-		    :foreground "gray30"  
-		    :height 1.0  
-		    )  
+;; (require 'tabbar)  
+;; (tabbar-mode 1) 
+;; 设置tabbar外观
 ;; 设置左边按钮外观：外框框边大小和颜色  
-(set-face-attribute 'tabbar-button nil  
-		    :inherit 'tabbar-default  
-		    :box '(:line-width 1 :color "yellow")  
-		    )  
+;; (set-face-attribute 'tabbar-button nil  
+;; 		    :inherit 'tabbar-default  
+;; 		    :box '(:line-width 1 :color "yellow")  
+;; 		    )
+;; 设置默认主题: 字体, 背景和前景颜色，大小  
+;; (set-face-attribute 'tabbar-default nil  
+;; 		    :family "DejaVu Sans Mono"  
+;; 		    :background "gray80"  
+;; 		    :foreground "gray30"  
+;; 		    :height 1.0  
+;; 		    )  
 ;; 设置当前tab外观：颜色，字体，外框大小和颜色  
-(set-face-attribute 'tabbar-selected nil  
-		    :inherit 'tabbar-default  
-		    :foreground "DarkGreen"  
-		    :background "LightGoldenrod"  
-		    :box '(:line-width 2 :color "DarkGoldenrod")  
-		    :overline "black"  
-		    :underline "black"  
-		    :weight 'bold  
-		    )  
+;; (set-face-attribute 'tabbar-selected nil  
+;; 		    :inherit 'tabbar-default  
+;; 		    :foreground "DarkGreen"  
+;; 		    :background "LightGoldenrod"  
+;; 		    :box '(:line-width 2 :color "DarkGoldenrod")  
+;; 		    :overline "black"  
+;; 		    :underline "black"  
+;; 		    :weight 'bold  
+;; 		    )  
 ;; 设置非当前tab外观：外框大小和颜色  
-(set-face-attribute 'tabbar-unselected nil  
-		    :inherit 'tabbar-default  
-		    :box '(:line-width 2 :color "#00B2BF")  
-		    )  
+;; (set-face-attribute 'tabbar-unselected nil  
+;; 		    :inherit 'tabbar-default  
+;; 		    :box '(:line-width 2 :color "#00B2BF")  
+;; 		    )  
+
+(setq tabbar-ruler-global-tabbar t) ; If you want tabbar
+(require 'tabbar-ruler)
+(global-set-key [(meta j)] 'tabbar-ruler-forward)
+(global-set-key [(meta k)] 'tabbar-ruler-backward)  
 
 ;; Buffer
 (global-linum-mode)
 (scroll-bar-mode -1)
 
-(require 'rainbow-delimiters)
-(global-rainbow-delimiters-mode)
+(setq-default fci-rule-column 80)
+(setq fci-rule-width 1)
+(setq fci-rule-color "lightblue")
+
+(when (display-graphic-p)
+  (fringe-mode '(0 . 0))
+  (require 'highlight-tail)
+  (setq highlight-tail-colors '(("#95A5A6" . 0)
+				("#27ae60" . 10)
+				("#27AE60" . 66)))
+  (highlight-tail-mode))
 
 ;; font
 (when (display-graphic-p)
@@ -78,7 +90,6 @@ If set/leave chinese-font-size to nil, it will follow english-font-size"
       (message "Set English Font to %s" en-font)
       (set-face-attribute
        'default nil :font en-font)
-      
       ;; Set Chinese font 
       ;; Do not use 'unicode charset, it will cause the english font setting invalid
       (message "Set Chinese Font to %s" zh-font)
@@ -86,31 +97,19 @@ If set/leave chinese-font-size to nil, it will follow english-font-size"
 	(set-fontset-font (frame-parameter nil 'font)
 			  charset
 			  zh-font))))
-
   (qiang-set-font
    '("Source Code Pro" "Consolas" "Monaco" "DejaVu Sans Mono" "Monospace" "Courier New") ":pixelsize=14"
    '("Microsoft Yahei" "WenQuanYi Zen Hei" "黑体" "新宋体" "宋体"))
-
   (global-set-key (kbd "<C-mouse-4>") 'text-scale-increase)
-  (global-set-key (kbd "<C-mouse-5>") 'text-scale-decrease)
+  (global-set-key (kbd "<C-mouse-5>") 'text-scale-decrease))
 
-  (require `highlight-tail)
-  (setq highlight-tail-colors '(("black" . 0)
-				("#2525bc" . 25)
-				("black" . 66)))
-  (highlight-tail-mode)
-  )
-
-;; mode-line
+;; mode-line and theme
+(require 'powerline)
+(powerline-default-theme)
 (which-function-mode)
-(display-time)
 
-(require 'color-theme)
-(eval-after-load "color-theme"
-  '(progn
-     (color-theme-initialize)))
-(color-theme-calm-forest)
-
-
+(require 'moe-theme)
+(require 'moe-theme-switcher)
+(powerline-moe-theme)
 
 (provide 'init-appearance)

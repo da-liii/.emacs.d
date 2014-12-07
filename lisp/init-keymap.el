@@ -6,6 +6,7 @@
 (global-set-key (kbd "<f5>") 'compile)
 (global-set-key [(meta ?/)] 'hippie-expand)
 (global-set-key (kbd "<f10>") 'rename-buffer)
+(global-set-key (kbd "<f7>") 'minimap-mode)
 (define-key key-translation-map [?\C-h] [?\C-?]) 
 
 (global-set-key [M-left] 'windmove-left)
