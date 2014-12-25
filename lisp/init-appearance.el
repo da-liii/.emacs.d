@@ -39,12 +39,41 @@
 (global-set-key [(meta k)] 'tabbar-ruler-backward)  
 
 ;; Buffer
+
+(show-paren-mode 1)
+(global-hl-line-mode 1)
 (global-linum-mode)
 (scroll-bar-mode -1)
 
+;;; rainbow delimiters mode
+(add-hook 'c-mode-common-hook 'rainbow-delimiters-mode)
+(add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'python-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'scheme-mode-hook 'rainbow-delimiters-mode)
+
+;;; indent guide mode
+(setq indent-guide-recursive t)
+(setq indent-guide-delay 0.1)
+(add-hook 'c-mode-common-hook 'indent-guide-mode)
+(add-hook 'emacs-lisp-mode-hook 'indent-guide-mode)
+(add-hook 'java-mode-hook 'indent-guide-mode)
+(add-hook 'python-mode-hook 'indent-guide-mode)
+(add-hook 'scheme-mode-hook 'indent-guide-mode)
+
+;;; highlight s-expression mode
+(add-hook 'c-mode-common-hook 'hl-sexp-mode)
+(add-hook 'emacs-lisp-mode-hook 'hl-sexp-mode)
+(add-hook 'scheme-mode-hook 'hl-sexp-mode)
+
+;;; fill column indicator
 (setq-default fci-rule-column 80)
 (setq fci-rule-width 1)
 (setq fci-rule-color "lightblue")
+(add-hook 'c-mode-common-hook 'fci-mode)
+(add-hook 'emacs-lisp-mode-hook 'fci-mode)
+(add-hook 'java-mode-hook 'fci-mode)
+(add-hook 'python-mode-hook 'fci-mode)
+(add-hook 'scheme-mode-hook 'fci-mode)
 
 (when (display-graphic-p)
   (fringe-mode '(0 . 0))

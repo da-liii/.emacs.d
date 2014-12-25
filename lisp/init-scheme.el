@@ -4,8 +4,6 @@
       (cons '("\\.\\(scm\\|rkt\\)\\'" . scheme-mode) auto-mode-alist))
 
 (add-hook 'scheme-mode-hook 'paredit-mode)
-(add-hook 'scheme-mode-hook 'fci-mode)
-(add-hook 'scheme-mode-hook 'rainbow-delimiters-mode)
 
 (global-set-key (kbd "M-(") 'paredit-wrap-round)
 (global-set-key (kbd "M-\"") 'paredit-meta-doublequote)

@@ -1,7 +1,6 @@
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
-
 (add-to-list 'load-path "~/.emacs.d/elpa/moe-theme-20141126.1713/")
 (add-to-list 'load-path "~/.emacs.d/elpa/powerline-20141125.726/")
 (add-to-list 'load-path "~/.emacs.d/elpa/highlight-tail-20140416.141/")
@@ -9,6 +8,8 @@
 (add-to-list 'load-path "~/.emacs.d/elpa/tabbar-ruler-20140905.1543/")
 (add-to-list 'load-path "~/.emacs.d/elpa/rainbow-delimiters-20141205.213/")
 (add-to-list 'load-path "~/.emacs.d/elpa/paredit-20141206.954/")
+(add-to-list 'load-path "~/.emacs.d/elpa/auto-complete-20141208.809/")
+(add-to-list 'load-path "~/.emacs.d/elpa/popup-20141213.541/")
 	
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 (require 'init-edit)
@@ -16,13 +17,14 @@
 (require 'init-markdown)
 (require 'init-shell)
 (require 'init-org)
-(require 'init-keymap)
 (require 'init-appearance)
 (require 'init-cpp) ;; c & cpp
 (require 'init-scheme)
 (require 'init-elisp)
 (require 'init-python)
+(require 'init-ruby)
 (require 'init-java)
+(require 'init-keymap)
 
 ;; Default Settings
 (prefer-coding-system 'utf-8)

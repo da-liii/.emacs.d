@@ -20,4 +20,11 @@
 ;; gtags
 (global-set-key (kbd "M-,") 'gtags-find-tag-from-here)
 
+(define-key ac-mode-map  [(control tab)] 'auto-complete)
+
+(add-hook 'paredit-everywhere-mode-hook
+          '(lambda ()
+             (define-key paredit-everywhere-mode-map
+               (kbd "C-k") 'paredit-kill)))
+
 (provide 'init-keymap)
