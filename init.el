@@ -10,6 +10,7 @@
 (add-to-list 'load-path "~/.emacs.d/elpa/paredit-20141206.954/")
 (add-to-list 'load-path "~/.emacs.d/elpa/auto-complete-20141208.809/")
 (add-to-list 'load-path "~/.emacs.d/elpa/popup-20141213.541/")
+(add-to-list 'load-path "~/.emacs.d/elpa/helm-20150307.549/")
 	
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 (require 'init-edit)
@@ -62,3 +63,6 @@
  '(rainbow-delimiters-depth-7-face ((t (:foreground "#f39c12"))))
  '(rainbow-delimiters-depth-8-face ((t (:foreground "#3498db"))))
  '(rainbow-delimiters-depth-9-face ((t (:foreground "#d35400")))))
+
+(setq visible-bell t)
+(server-start)

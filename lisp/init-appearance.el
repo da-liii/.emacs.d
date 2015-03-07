@@ -41,7 +41,7 @@
 ;; Buffer
 
 (show-paren-mode 1)
-(global-hl-line-mode 1)
+(when (display-graphic-p) (global-hl-line-mode 1))
 (global-linum-mode)
 (scroll-bar-mode -1)
 
@@ -61,7 +61,6 @@
 (add-hook 'scheme-mode-hook 'indent-guide-mode)
 
 ;;; highlight s-expression mode
-(add-hook 'c-mode-common-hook 'hl-sexp-mode)
 (add-hook 'emacs-lisp-mode-hook 'hl-sexp-mode)
 (add-hook 'scheme-mode-hook 'hl-sexp-mode)
 
@@ -76,12 +75,7 @@
 (add-hook 'scheme-mode-hook 'fci-mode)
 
 (when (display-graphic-p)
-  (fringe-mode '(0 . 0))
-  (require 'highlight-tail)
-  (setq highlight-tail-colors '(("#95A5A6" . 0)
-				("#27ae60" . 10)
-				("#27AE60" . 66)))
-  (highlight-tail-mode))
+  (fringe-mode '(0 . 0)))
 
 ;; font
 (when (display-graphic-p)
@@ -127,7 +121,7 @@ If set/leave chinese-font-size to nil, it will follow english-font-size"
 			  charset
 			  zh-font))))
   (qiang-set-font
-   '("Source Code Pro" "Consolas" "Monaco" "DejaVu Sans Mono" "Monospace" "Courier New") ":pixelsize=14"
+   '("Inconsolata" "Source Code Pro" "Consolas" "Monaco" "DejaVu Sans Mono" "Monospace" "Courier New") ":pixelsize=14"
    '("Microsoft Yahei" "WenQuanYi Zen Hei" "黑体" "新宋体" "宋体"))
   (global-set-key (kbd "<C-mouse-4>") 'text-scale-increase)
   (global-set-key (kbd "<C-mouse-5>") 'text-scale-decrease))
