@@ -1,22 +1,19 @@
 ;;C/C++  mode
-;(require 'cedet)
-;(global-semantic-idle-completions-mode t)
-;(global-semantic-decoration-mode t)
-;(global-semantic-highlight-func-mode t)
-;(global-semantic-show-unmatched-syntax-mode t)
-;(global-set-key [f12] 'semantic-ia-fast-jump)
-;; (global-set-key [S-f12]
-;;                 (lambda ()
-;;                   (interactive)
-;;                   (if (ring-empty-p (oref semantic-mru-bookmark-ring ring))
-;;                       (error "Semantic Bookmark ring is currently empty"))
-;;                   (let* ((ring (oref semantic-mru-bookmark-ring ring))
-;;                          (alist (semantic-mrub-ring-to-assoc-list ring))
-;;                          (first (cdr (car alist))))
-;;                     (if (semantic-equivalent-tag-p (oref first tag)
-;;                                                    (semantic-current-tag))
-;;                         (setq first (cdr (car (cdr alist)))))
-;;                     (semantic-mrub-switch-tags first))))
+;; CEDET
+(require 'cc-mode)
+(require 'semantic)
+(global-semanticdb-minor-mode 1)
+(global-semantic-idle-scheduler-mode 1)
+(semantic-mode 1)
+(semantic-add-system-include "/usr/include/boost" 'c++-mode)
+
+;; Functions Args
+(require 'function-args)
+(fa-config-default)
+;(define-key c-mode-map  [(contrl tab)] 'moo-complete)
+;(define-key c++-mode-map  [(control tab)] 'moo-complete)
+;(define-key c-mode-map (kbd "M-o")  'fa-show)
+;(define-key c++-mode-map (kbd "M-o")  'fa-show)
 
 ;; auto complete clang
 (require 'auto-complete-clang)  
@@ -28,12 +25,12 @@
         (mapcar (lambda (item)(concat "-I" item))  
                 (split-string  
                  "
- /usr/include/c++/4.8
- /usr/include/x86_64-linux-gnu/c++/4.8
- /usr/include/c++/4.8/backward
- /usr/lib/gcc/x86_64-linux-gnu/4.8/include
+ /usr/include/c++/4.9
+ /usr/include/x86_64-linux-gnu/c++/4.9
+ /usr/include/c++/4.9/backward
+ /usr/lib/gcc/x86_64-linux-gnu/4.9/include
  /usr/local/include
- /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed
+ /usr/lib/gcc/x86_64-linux-gnu/4.9/include-fixed
  /usr/include/x86_64-linux-gnu
  /usr/include
 ")))

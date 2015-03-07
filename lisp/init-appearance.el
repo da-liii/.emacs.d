@@ -1,6 +1,9 @@
 ;; 隐藏菜单栏
 (menu-bar-mode -1)
 
+(require 'sr-speedbar)
+(sr-speedbar-open)
+
 ;; Tabber
 ;; (require 'tabbar)  
 ;; (tabbar-mode 1) 
