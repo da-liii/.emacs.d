@@ -4,17 +4,10 @@
 (let ((default-directory "~/.emacs.d/elpa/"))
   (normal-top-level-add-to-load-path '("."))
   (normal-top-level-add-subdirs-to-load-path))
-;(add-to-list 'load-path "~/.emacs.d/elpa/moe-theme-20141126.1713/")
-;(add-to-list 'load-path "~/.emacs.d/elpa/powerline-20141125.726/")
-;(add-to-list 'load-path "~/.emacs.d/elpa/highlight-tail-20140416.141/")
-;(add-to-list 'load-path "~/.emacs.d/elpa/tabbar-20141109.143/")
-;(add-to-list 'load-path "~/.emacs.d/elpa/tabbar-ruler-20140905.1543/")
-;(add-to-list 'load-path "~/.emacs.d/elpa/rainbow-delimiters-20141205.213/")
-;(add-to-list 'load-path "~/.emacs.d/elpa/paredit-20141206.954/")
-;(add-to-list 'load-path "~/.emacs.d/elpa/auto-complete-20141208.809/")
-;(add-to-list 'load-path "~/.emacs.d/elpa/popup-20141213.541/")
-;(add-to-list 'load-path "~/.emacs.d/elpa/helm-20150307.549/")
-;(add-to-list 'load-path "~/.emacs.d/elpa/function-args-20150206.420/")
+
+
+(require 'company)
+(add-hook 'after-init-hook 'global-company-mode)
 
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 (require 'init-edit)
@@ -40,6 +33,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(c-tab-always-indent nil)
+ '(company-c-headers-path-system
+   (quote
+    ("/usr/include/" "/usr/local/include/" "/usr/include/c++/4.9/" "/usr/include/x86_64-linux-gnu/c++/4.9/" "/usr/include/c++/4.9/backward/" "/usr/include/x86)64-linux-gnu/" "/usr/include/boost")))
  '(display-time-mode t)
  '(ecb-options-version "2.40")
  '(indent-tabs-mode nil)
