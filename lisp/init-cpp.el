@@ -1,29 +1,19 @@
 ;;C/C++  mode
 ;; CEDET
 (require 'cc-mode)
-(require 'semantic)
-(global-semanticdb-minor-mode 1)
-(global-semantic-idle-scheduler-mode 1)
-(semantic-mode 1)
-(semantic-add-system-include "/usr/include/boost" 'c++-mode)
+;(require 'semantic)
+;(global-semanticdb-minor-mode 1)
+;(global-semantic-idle-scheduler-mode 1)
+;(global-semantic-idle-summary-mode 1)
+;(semantic-mode 1)
+;(semantic-add-system-include "/usr/include/boost" 'c++-mode)
 
 ;; Functions Args
 (require 'function-args)
-(fa-config-default)
-(define-key c-mode-map (kbd "<f12>") 'fa-jump-maybe)
-(define-key c-mode-map  (kbd "<f12>") 'fa-jump-maybe)
-;(define-key c++-mode-map  [(control tab)] 'moo-complete)
-;(define-key c-mode-map (kbd "M-o")  'fa-show)
-;(define-key c++-mode-map (kbd "M-o")  'fa-show)
+;(fa-config-default)
 
 ;; Company Mode
 (add-to-list 'company-backends 'company-c-headers)
-;(add-to-list 'company-c-headers-path-system "/usr/include/c++/4.9/")
-;(add-to-list 'company-c-headers-path-system "/usr/include/x86_64-linux-gnu/c++/4.9")
-;(add-to-list 'company-c-headers-path-system "/usr/include/c++/4.9/backward")
-;(add-to-list 'company-c-headers-path-system "/usr/lib/gcc/x86_64-linux-gnu/4.9/include")
-;(add-to-list 'company-c-headers-path-system "/usr/lib/gcc/x86_64-linux-gnu/4.9/include-fixed")
-;(add-to-list 'company-c-headers-path-system "/usr/include/x86_64-linux-gnu")
 
 ;; auto complete clang
 (require 'auto-complete-clang)  
