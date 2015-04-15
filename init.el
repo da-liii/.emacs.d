@@ -21,7 +21,6 @@
 (require 'init-elisp)
 (require 'init-python)
 (require 'init-ruby)
-(require 'init-java)
 (require 'init-keymap)
 (require 'init-haskell)
 
