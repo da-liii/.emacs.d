@@ -1,5 +1,5 @@
-(require 'sdcv-mode)
-(global-set-key (kbd "C-c d") 'sdcv-search)
+;; (require 'sdcv-mode)
+;; (global-set-key (kbd "C-c d") 'sdcv-search)
 ;; helm
 (require 'helm)
 (require 'helm-config)
