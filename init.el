@@ -1,6 +1,50 @@
 (require 'package)
+
+(setq jpk-package-list
+      '(magit
+	moe-theme
+	powerline
+	rainbow-delimiters
+	tabbar-ruler
+	fill-column-indicator
+	markdown-mode
+	paredit
+	paredit-everywhere
+	indent-guide
+	hl-line
+	hl-sexp
+	company
+	company-c-headers
+	keyfreq
+	auto-complete-clang
+	evil
+	helm
+	function-args))
+
+;; package-install-auto
+(defun jpk-package-list-install ()
+  (interactive)
+  (package-initialize)
+  (when (not package-archive-contents)
+    (package-refresh-contents))
+  (dolist (pkg jpk-package-list)
+    (when (and (not (package-installed-p pkg))
+	       (assoc pkg package-archive-contents))
+      (package-install pkg))))
+
+
+;; list the unaccounted packages
+(defun package-list-unaccounted-packages ()
+  (interactive)
+  (package-show-package-list
+   (remove-if-not (lambda (x) (and (not (memq x jpk-package-list))
+				   (not (package-built-in-p x))
+				   (package-installed-p x)))
+		  (mapcar 'car package-archive-contents))))
+
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
 (let ((default-directory "~/.emacs.d/elpa/"))
   (normal-top-level-add-to-load-path '("."))
   (normal-top-level-add-subdirs-to-load-path))
@@ -19,7 +63,7 @@
 (require 'init-cpp) ;; c & cpp
 (require 'init-scheme)
 (require 'init-elisp)
-(require 'init-python)
+; (require 'init-python)
 (require 'init-ruby)
 (require 'init-keymap)
 (require 'init-haskell)
