@@ -5,10 +5,18 @@
 (global-set-key [(meta f3)] 'highlight-symbol-prev)
 
 ;; yasnippet
-;; (require 'yasnippet)
-;; (yas/global-mode 1)
-;; (setq yas/root-directory "~/.emacs.d/snippets")
-;; (yas/load-directory yas/root-directory)
+(require 'yasnippet)
+(yas-global-mode 1)
+(setq yas-snippet-dirs
+      '("~/.emacs.d/snippets"                 ;; personal snippets
+;        "/path/to/some/collection/"           ;; foo-mode and bar-mode snippet collection
+;        "/path/to/yasnippet/yasmate/snippets" ;; the yasmate collection
+;        "/path/to/yasnippet/snippets"         ;; the default collection
+        ))
+
+(require 'company)
+(add-hook 'after-init-hook 'global-company-mode)
+(add-to-list 'company-backends 'company-yasnippet)
 
 ;; auto pair
 (require 'autopair)

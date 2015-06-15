@@ -1,28 +1,36 @@
 (require 'package)
 
 (setq jpk-package-list
-      '(magit
-	moe-theme
-	powerline
-	rainbow-delimiters
-	tabbar-ruler
-	fill-column-indicator
-	paredit
-	paredit-everywhere
-	indent-guide
-	hl-line
-	hl-sexp
-	company
-	company-c-headers
-	keyfreq
-	evil
-	helm
-	function-args
-	youdao-dictionary
-	elpy
-	pydoc
-	markdown-mode
-	yaml-mode))
+      '(
+        ;; apperance
+        moe-theme
+        powerline
+        rainbow-delimiters
+        tabbar-ruler
+        fill-column-indicator
+        indent-guide
+        hl-line
+        ;; edit
+        paredit
+        paredit-everywhere
+        hl-sexp
+        yasnippet
+        company
+        company-c-headers
+        ;; util
+        keyfreq
+        evil
+        helm
+        helm-c-yasnippet
+        youdao-dictionary
+        magit
+        ;; cpp
+        function-args
+        ;; python
+        elpy
+        pydoc
+        markdown-mode
+        yaml-mode))
 
 ;; package-install-auto
 (defun jpk-package-list-install ()
@@ -55,10 +63,10 @@
 
 (require 'init-edit)
 (require 'init-utils)
+(require 'init-appearance)
 (require 'init-markdown)
 (require 'init-shell)
 (require 'init-org)
-(require 'init-appearance)
 (require 'init-cpp) ;; c & cpp
 (require 'init-scheme)
 (require 'init-elisp)

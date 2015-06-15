@@ -1,8 +1,5 @@
 ;; helm
 
-(require 'company)
-(add-hook 'after-init-hook 'global-company-mode)
-
 (require 'helm)
 (require 'helm-config)
 (require 'helm-eshell)
