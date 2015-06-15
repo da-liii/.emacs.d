@@ -1,9 +1,6 @@
-(add-hook 'python-mode-hook 'rainbow-delimiters-mode)
-(add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:complete-on-dot t)
+(require 'elpy)
 
-(add-hook 'python-mode-hook
-          '(lambda ()
-             (global-set-key (kbd "M-,") 'jedi:goto-definition)))
+(add-hook 'python-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'python-mode-hook 'elpy-mode)
 
 (provide 'init-python)

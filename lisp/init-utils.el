@@ -1,6 +1,8 @@
-;; (require 'sdcv-mode)
-;; (global-set-key (kbd "C-c d") 'sdcv-search)
 ;; helm
+
+(require 'company)
+(add-hook 'after-init-hook 'global-company-mode)
+
 (require 'helm)
 (require 'helm-config)
 (require 'helm-eshell)
@@ -68,7 +70,7 @@
 (set-face-attribute 'helm-selection nil :background "#666666")
 (helm-mode 1)
 
-;; 备份
+;; backup
 (setq version-control t ;; Use version numbers for backups
       kept-new-versions 16 ;; Number of newest versions to keep
       kept-old-versions 2 ;; Number of oldest versions to keep

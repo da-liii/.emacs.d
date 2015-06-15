@@ -7,7 +7,6 @@
 	rainbow-delimiters
 	tabbar-ruler
 	fill-column-indicator
-	markdown-mode
 	paredit
 	paredit-everywhere
 	indent-guide
@@ -16,10 +15,14 @@
 	company
 	company-c-headers
 	keyfreq
-	auto-complete-clang
 	evil
 	helm
-	function-args))
+	function-args
+	youdao-dictionary
+	elpy
+	pydoc
+	markdown-mode
+	yaml-mode))
 
 ;; package-install-auto
 (defun jpk-package-list-install ()
@@ -31,7 +34,6 @@
     (when (and (not (package-installed-p pkg))
 	       (assoc pkg package-archive-contents))
       (package-install pkg))))
-
 
 ;; list the unaccounted packages
 (defun package-list-unaccounted-packages ()
@@ -49,11 +51,8 @@
   (normal-top-level-add-to-load-path '("."))
   (normal-top-level-add-subdirs-to-load-path))
 
-
-(require 'company)
-(add-hook 'after-init-hook 'global-company-mode)
-
 (add-to-list 'load-path "~/.emacs.d/lisp/")
+
 (require 'init-edit)
 (require 'init-utils)
 (require 'init-markdown)
@@ -63,10 +62,10 @@
 (require 'init-cpp) ;; c & cpp
 (require 'init-scheme)
 (require 'init-elisp)
-; (require 'init-python)
+(require 'init-python)
 (require 'init-ruby)
-(require 'init-keymap)
 (require 'init-haskell)
+(require 'init-keymap)
 
 ;; Default Settings
 (prefer-coding-system 'utf-8)
@@ -79,10 +78,11 @@
  '(c-tab-always-indent nil)
  '(company-c-headers-path-system
    (quote
-    ("/usr/include/" "/usr/local/include/" "/usr/include/c++/4.9/" "/usr/include/x86_64-linux-gnu/c++/4.9/" "/usr/include/c++/4.9/backward/" "/usr/include/x86)64-linux-gnu/" "/usr/include/boost")))
+    ("/usr/include/" "/usr/local/include/" "/usr/include/c++/4.9/" "/usr/include/x86_64-linux-gnu/c++/4.9/" "/usr/include/c++/4.9/backward/" "/usr/include/x86_64-linux-gnu/" "/usr/include/boost" "/usr/include/qt4" "/usr/include/KDE")))
  '(display-time-mode t)
  '(ecb-options-version "2.40")
  '(indent-tabs-mode nil)
+ '(global-company-mode t)
  '(inhibit-startup-screen t)
  '(minimap-window-location (quote right))
  '(org-agenda-files (quote ("~/todo.org")))

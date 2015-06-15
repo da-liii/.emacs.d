@@ -38,8 +38,6 @@
 
 (setq tabbar-ruler-global-tabbar t) ; If you want tabbar
 (require 'tabbar-ruler)
-(global-set-key [(meta j)] 'tabbar-ruler-forward)
-(global-set-key [(meta k)] 'tabbar-ruler-backward)  
 
 ;; Buffer
 
@@ -60,7 +58,6 @@
 (add-hook 'c-mode-common-hook 'indent-guide-mode)
 (add-hook 'emacs-lisp-mode-hook 'indent-guide-mode)
 (add-hook 'java-mode-hook 'indent-guide-mode)
-(add-hook 'python-mode-hook 'indent-guide-mode)
 (add-hook 'scheme-mode-hook 'indent-guide-mode)
 
 ;;; highlight s-expression mode
@@ -129,7 +126,7 @@ If set/leave chinese-font-size to nil, it will follow english-font-size"
   (global-set-key (kbd "<C-mouse-4>") 'text-scale-increase)
   (global-set-key (kbd "<C-mouse-5>") 'text-scale-decrease))
 
-;; mode-line and theme
+;;  mode-line and theme
 (require 'powerline)
 (powerline-default-theme)
 (which-function-mode)

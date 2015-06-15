@@ -10,13 +10,6 @@
 ;; (setq yas/root-directory "~/.emacs.d/snippets")
 ;; (yas/load-directory yas/root-directory)
 
-;; auto complete
-(require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
-(ac-config-default)
-(define-key ac-completing-map "\M-n" 'ac-next)  ;;; 列表中通过按M-n来向下移动
-(define-key ac-completing-map "\M-p" 'ac-previous)
-
 ;; auto pair
 (require 'autopair)
 (autopair-global-mode)
