@@ -1,3 +1,10 @@
+;; set some environment variables
+(setenv "GOROOT" (concat (getenv "HOME") "/.gvm/gos/go1.5"))
+(setenv "GOPATH" (concat (getenv "HOME") "/.gvm/pkgsets/go1.5/global"))
+(setenv "PATH" (concat (getenv "PATH")
+                       ":" (concat (getenv "GOPATH") "/bin")
+                       ":" (concat (getenv "GOROOT") "/bin")))
+
 (require 'package)
 
 (setq jpk-package-list
@@ -17,6 +24,7 @@
         yasnippet
         company
         company-c-headers
+        company-go
         ;; util
         keyfreq
         evil
@@ -30,7 +38,8 @@
         elpy
         pydoc
         markdown-mode
-        yaml-mode))
+        yaml-mode
+	go-mode))
 
 ;; package-install-auto
 (defun jpk-package-list-install ()
@@ -64,6 +73,7 @@
 (require 'init-edit)
 (require 'init-utils)
 (require 'init-appearance)
+(require 'init-golang)
 (require 'init-markdown)
 (require 'init-shell)
 (require 'init-org)

@@ -18,6 +18,9 @@
 (add-hook 'after-init-hook 'global-company-mode)
 (add-to-list 'company-backends 'company-yasnippet)
 
+(require 'evil)
+(add-hook 'after-init-hook 'evil-mode)
+
 ;; auto pair
 (require 'autopair)
 (autopair-global-mode)
