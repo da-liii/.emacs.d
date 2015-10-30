@@ -49,6 +49,7 @@
 ;;; rainbow delimiters mode
 (add-hook 'c-mode-common-hook 'rainbow-delimiters-mode)
 (add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'go-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'python-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'scheme-mode-hook 'rainbow-delimiters-mode)
 

@@ -1,10 +1,3 @@
-;; set some environment variables
-(setenv "GOROOT" (concat (getenv "HOME") "/.gvm/gos/go1.5"))
-(setenv "GOPATH" (concat (getenv "HOME") "/.gvm/pkgsets/go1.5/global"))
-(setenv "PATH" (concat (getenv "PATH")
-                       ":" (concat (getenv "GOPATH") "/bin")
-                       ":" (concat (getenv "GOROOT") "/bin")))
-
 (require 'package)
 
 (setq jpk-package-list
@@ -24,7 +17,6 @@
         yasnippet
         company
         company-c-headers
-        company-go
         ;; util
         keyfreq
         evil
@@ -73,6 +65,7 @@
 (require 'init-edit)
 (require 'init-utils)
 (require 'init-appearance)
+
 (require 'init-golang)
 (require 'init-markdown)
 (require 'init-shell)
@@ -83,6 +76,7 @@
 (require 'init-python)
 (require 'init-ruby)
 (require 'init-haskell)
+
 (require 'init-keymap)
 
 ;; Default Settings
@@ -126,5 +120,6 @@
  '(rainbow-delimiters-depth-8-face ((t (:foreground "#3498db"))))
  '(rainbow-delimiters-depth-9-face ((t (:foreground "#d35400")))))
 
+;; customize
 (setq visible-bell t)
 (server-start)

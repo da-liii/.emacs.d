@@ -1,9 +1,21 @@
-(add-hook 'before-save-hook 'gofmt-before-save)
-(add-hook 'go-mode-hook 'rainbow-delimiters-mode)
+;; set some environment variables
+(setenv "GOROOT" (concat (getenv "HOME") "/shared/go"))
+(setenv "GOPATH" (concat (getenv "HOME") "/shared/gocode"))
+;;; we do not need the following lines, because emacs cannot change
+;;; it's PATH internally
+;; (setenv "PATH" (concat (getenv "PATH")                         
+;;                        ":" (concat (getenv "GOPATH") "/bin")   
+;;                        ":" (concat (getenv "GOROOT") "/bin"))) 
+(load (concat (getenv "GOPATH") "/src/github.com/dougm/goflymake/go-flymake.el"))
+(load (concat (getenv "GOPATH") "/src/golang.org/x/tools/cmd/oracle/oracle.el"))
+(load (concat (getenv "GOPATH") "/src/github.com/nsf/gocode/emacs-company/company-go.el"))
+
+;;; Keyboards
+;;; TODO should be moved into init-keyboard
 (global-set-key (kbd "M-,") 'godef-jump)
 
+;;; Utils
 (require 'company-go)
-
 (add-hook 'go-mode-hook (lambda ()
   (set (make-local-variable 'company-backends) '(company-go))))
 
@@ -12,12 +24,8 @@
 (setq company-echo-delay 0)                          ; remove annoying blinking
 (setq company-begin-commands '(self-insert-command)) ; start autocompletion only after typing
 
-;; go flymake
-(load "$GOPATH/src/github.com/dougm/goflymake/go-flymake.el")
-
-;; go oracle
-(load "$GOPATH/src/code.google.com/p/go.tools/cmd/oracle/oracle.el")
 (add-hook 'go-mode-hook 'go-oracle-mode)
+(add-hook 'before-save-hook 'gofmt-before-save)
 
 ;;(add-to-list 'load-path "~/src/github.com/dougm/goflymake")
 ;;(require 'go-flycheck)
