@@ -1,6 +1,6 @@
 ;; set some environment variables
-(setenv "GOROOT" (concat (getenv "HOME") "/shared/go"))
-(setenv "GOPATH" (concat (getenv "HOME") "/shared/gocode"))
+(setenv "GOROOT" "/usr/lib/go")
+(setenv "GOPATH" "/data/gocode")
 ;;; we do not need the following lines, because emacs cannot change
 ;;; it's PATH internally
 ;; (setenv "PATH" (concat (getenv "PATH")                         

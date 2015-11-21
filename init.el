@@ -20,8 +20,6 @@
         ;; util
         keyfreq
         evil
-        helm
-        helm-c-yasnippet
         youdao-dictionary
         magit
         ;; cpp
@@ -54,7 +52,7 @@
 		  (mapcar 'car package-archive-contents))))
 
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+             '("melpa" . "http://melpa.org/packages/") t)
 
 (let ((default-directory "~/.emacs.d/elpa/"))
   (normal-top-level-add-to-load-path '("."))
@@ -63,8 +61,8 @@
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
 (require 'init-edit)
-(require 'init-utils)
 (require 'init-appearance)
+(require 'init-utils)
 
 (require 'init-golang)
 (require 'init-markdown)
