@@ -9,6 +9,11 @@
 (global-set-key (kbd "<f7>") 'minimap-mode)
 (define-key key-translation-map [?\C-h] [?\C-?])
 
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+;; This is your old M-x.
+(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+
 ;; yasnippet
 (global-set-key (kbd "C-\\") 'yas/expand)
 

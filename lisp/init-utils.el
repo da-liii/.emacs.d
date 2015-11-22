@@ -27,5 +27,7 @@
 (require 'ido)
 (ido-mode t)
 
+(require 'smex)
+(smex-initialize)
 
 (provide 'init-utils)

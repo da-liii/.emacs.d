@@ -27,6 +27,7 @@
         ;; python
         elpy
         pydoc
+        qml-mode
         markdown-mode
         yaml-mode
 	go-mode))
@@ -74,6 +75,7 @@
 (require 'init-python)
 (require 'init-ruby)
 (require 'init-haskell)
+(require 'init-qml)
 
 (require 'init-keymap)
 
