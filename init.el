@@ -24,6 +24,8 @@
         magit
         ;; cpp
         function-args
+        ;; scala
+        ensime
         ;; python
         elpy
         pydoc
@@ -70,6 +72,7 @@
 (require 'init-shell)
 (require 'init-org)
 (require 'init-cpp) ;; c & cpp
+(require 'init-scala)
 (require 'init-scheme)
 (require 'init-elisp)
 (require 'init-python)

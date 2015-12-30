@@ -20,6 +20,7 @@
 
 (require 'evil)
 (add-hook 'after-init-hook 'evil-mode)
+(add-to-list 'evil-emacs-state-modes 'scala-mode)
 
 ;; auto pair
 (require 'autopair)
