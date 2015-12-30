@@ -16,8 +16,7 @@
 
 ;;; Utils
 (require 'company-go)
-(add-hook 'go-mode-hook (lambda ()
-  (set (make-local-variable 'company-backends) '(company-go))))
+(add-to-list 'company-backends 'company-go)
 
 (setq company-tooltip-limit 20)                      ; bigger popup window
 (setq company-idle-delay .3)                         ; decrease delay before autocompletion popup shows
