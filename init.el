@@ -19,6 +19,7 @@
         company-c-headers
         ;; util
         keyfreq
+	smex
         evil
         youdao-dictionary
         magit
