@@ -26,11 +26,8 @@
 ;	smex
 ;        evil
 ;        youdao-dictionary
-;        magit
 ;        ;; cpp
 ;        function-args
-;        ;; scala
-;        ensime
 ;        ;; vuejs
 ;        vue-mode
 ;        ;; python
@@ -79,7 +76,6 @@
 ;(require 'init-shell)
 ;(require 'init-org)
 ;(require 'init-cpp) ;; c & cpp
-;(require 'init-scala)
 ;(require 'init-scheme)
 ;(require 'init-elisp)
 ;(require 'init-python)

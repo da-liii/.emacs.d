@@ -2,3 +2,6 @@ elpa/
 semanticdb/
 tutorial/
 *~
+spacemacs/
+ensime/
+.cache/
