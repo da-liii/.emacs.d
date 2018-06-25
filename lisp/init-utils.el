@@ -18,6 +18,26 @@
  kept-old-versions 2
  version-control t)       ; use versioned backups
 
+;; Project Tile
+(require 'projectile)
+(setq projectile-use-git-grep t)
+(projectile-global-mode t)
+
+(require 'neotree)
+(defun neotree-project-dir ()
+    "Open NeoTree using the git root."
+    (interactive)
+    (let ((project-dir (projectile-project-root))
+          (file-name (buffer-file-name)))
+      (neotree-toggle)
+      (if project-dir
+          (if (neo-global--window-exists-p)
+              (progn
+                (neotree-dir project-dir)
+                (neotree-find file-name)))
+        (message "Could not find git project root."))))
+
+
 ;; Code Browser
 ;;(add-to-list 'load-path "/usr/share/emacs/site-lisp/ecb")
 ;;(setq stack-trace-on-error nil)

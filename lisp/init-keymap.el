@@ -17,6 +17,18 @@
 ;; yasnippet
 (global-set-key (kbd "C-\\") 'yas/expand)
 
+;; evil
+(define-key evil-normal-state-map (kbd "M-.") 'ensime-edit-definition)
+(define-key evil-normal-state-map "K" 'ensime-type-at-point)
+
+;; Project Tile
+(require 'evil-leader)
+(global-evil-leader-mode)
+(evil-leader/set-leader "<SPC>")
+(evil-leader/set-key "pf" 'projectile-find-file)
+(evil-leader/set-key "pg" 'projectile-grep)
+(evil-leader/set-key "pt" 'neotree-project-dir)
+
 ;; tabbar 
 (global-set-key (kbd "<M-right>") 'tabbar-ruler-forward)
 (global-set-key (kbd "<M-left>") 'tabbar-ruler-backward)
