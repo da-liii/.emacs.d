@@ -32,8 +32,8 @@ the mru bookmark stack."
         (setq first (cdr (car (cdr alist)))))
     (semantic-mrub-switch-tags first)))
 
-(define-key semantic-mode-map (kbd "<M-,>") 'semantic-ia-fast-jump)
-(define-key semantic-mode-map (kbd "<M-*>") 'semantic-ia-fast-jump-back)
+(define-key semantic-mode-map (kbd "<M-.>") 'semantic-ia-fast-jump)
+(define-key semantic-mode-map (kbd "<M-,>") 'semantic-ia-fast-jump-back)
 
 ;; Functions Args
 (require 'function-args)
