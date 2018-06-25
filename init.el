@@ -103,6 +103,10 @@
     ("/usr/include/" "/usr/local/include/" "/usr/include/c++/4.9/" "/usr/include/x86_64-linux-gnu/c++/4.9/" "/usr/include/c++/4.9/backward/" "/usr/include/x86_64-linux-gnu/" "/usr/include/boost" "/usr/include/qt4" "/usr/include/KDE")))
  '(display-time-mode t)
  '(ecb-options-version "2.40")
+ '(ensime-sbt-command "sbt")
+ '(exec-path
+   (quote
+    ("/usr/bin" "/bin" "/usr/sbin" "/sbin" "/Applications/Emacs.app/Contents/MacOS/bin-x86_64-10_9" "/Applications/Emacs.app/Contents/MacOS/libexec-x86_64-10_9" "/Applications/Emacs.app/Contents/MacOS/libexec" "/Applications/Emacs.app/Contents/MacOS/bin" "/usr/local/bin")))
  '(global-company-mode t)
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
@@ -113,6 +117,7 @@
  '(package-selected-packages
    (quote
     (evil-leader evil youdao-dictionary yaml-mode ws-butler winum which-key web-beautify volatile-highlights vi-tilde-fringe uuidgen use-package toc-org tabbar-ruler spaceline smex smeargle restart-emacs rainbow-delimiters qml-mode pydoc popwin persp-mode pcre2el paredit-everywhere paradox orgit org-bullets open-junk-file noflet neotree move-text moe-theme mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum livid-mode linum-relative link-hint keyfreq json-mode js2-refactor js-doc indent-guide hungry-delete hl-todo hl-sexp highlight-parentheses highlight-numbers helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-ag google-translate golden-ratio go-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md function-args flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu ensime elpy elisp-slime-nav eclim dumb-jump diminish define-word company-c-headers column-enforce-mode coffee-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line)))
+ '(sbt:program-name "sbt")
  '(tool-bar-mode nil))
 
 (custom-set-faces
