@@ -19,8 +19,9 @@
         company-c-headers
         ;; util
         keyfreq
-	smex
+        smex
         evil
+        evil-leader
         youdao-dictionary
         magit
         neotree
