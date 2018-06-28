@@ -2,3 +2,7 @@ elpa/
 semanticdb/
 tutorial/
 *~
+ido.last
+smex-items
+.cache/
+*.eld

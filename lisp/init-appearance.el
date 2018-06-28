@@ -38,6 +38,7 @@
 
 (setq tabbar-ruler-global-tabbar t) ; If you want tabbar
 (require 'tabbar-ruler)
+(tabbar-ruler-group-by-projectile-project)
 
 ;; Buffer
 
